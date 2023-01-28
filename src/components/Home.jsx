@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
-import { BsArrowUpRight } from "react-icons/bs";
-import me from "../assets/satya.jpg";
+import { BsArrowUpRight, BsChevronDown } from "react-icons/bs";
+import me from "../assets/satya2.png";
 const Home = () => {
   const animations = {
     h1: {
@@ -72,6 +72,7 @@ const Home = () => {
       <section>
         <img src={me} alt="Satyakant" />
       </section>
+      <BsChevronDown />
     </div>
   );
 };
