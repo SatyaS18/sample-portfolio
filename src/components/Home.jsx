@@ -1,9 +1,26 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { BsArrowUpRight, BsChevronDown } from "react-icons/bs";
 import me from "../assets/satya2.png";
+import { useRef } from "react";
 const Home = () => {
+  const clientCount = useRef(null);
+  const projectCount = useRef(null);
+
+  const animationClientsCount = () => {
+    animate(0, 100, {
+      duration: 5,
+      onUpdate: (v) => (clientCount.current.textContent = v.toFixed()),
+    });
+  };
+  const animationProjectsCount = () => {
+    animate(0, 500, {
+      duration: 5,
+      onUpdate: (v) => (projectCount.current.textContent = v.toFixed()),
+    });
+  };
+
   const animations = {
     h1: {
       initial: {
@@ -51,14 +68,22 @@ const Home = () => {
           </div>
           <article>
             <p>
-              +<span>100</span>
+              +
+              <motion.span
+                whileInView={animationClientsCount}
+                ref={clientCount}
+              ></motion.span>
             </p>
             <span>Clients Worldwide</span>
           </article>
           <aside>
             <article>
               <p>
-                +<span>500</span>
+                +
+                <motion.span
+                  whileInView={animationProjectsCount}
+                  ref={projectCount}
+                ></motion.span>
               </p>
               <span>Projects Made</span>
             </article>
