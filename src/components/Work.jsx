@@ -9,7 +9,15 @@ const Work = () => {
       <h2>WORK</h2>
       <section>
         <article>
-          <Carousel>
+          <Carousel
+            showArrows={false}
+            showIndicators={false}
+            showStatus={false}
+            showThumbs={false}
+            interval={2000}
+            infiniteLoop={true}
+            autoPlay={true}
+          >
             {data.projects.map((i) => (
               <div key={i.title} className="workItem">
                 <img src={i.imgSrc} alt={i.title} />
