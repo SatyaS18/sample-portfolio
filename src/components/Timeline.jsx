@@ -8,7 +8,7 @@ const Timeline = () => {
         {data.projects.map((item, index) => (
           <TimelineItem
             heading={item.title}
-            text={item.title}
+            text={item.date}
             index={index}
             key={item.title}
           />
@@ -24,8 +24,10 @@ const TimelineItem = ({ heading, text, index }) => (
       index % 2 === 0 ? "leftTimeline" : "rightTimeline"
     }`}
   >
-    <h2>{heading}</h2>
-    <p>{text}</p>
+    <div>
+      <h2>{heading}</h2>
+      <p>{text}</p>
+    </div>
   </div>
 );
 
