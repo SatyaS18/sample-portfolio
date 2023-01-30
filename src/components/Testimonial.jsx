@@ -8,7 +8,15 @@ const Testimonial = () => {
       <section>
         <TestimonialCard
           name={"Shikhar Gupta"}
-          feedback={"Very proficient work"}
+          feedback={"Proficient work, would like to collaborate"}
+        />
+        <TestimonialCard
+          name={"Sanket Diwate"}
+          feedback={"Amazing work, awesome developer"}
+        />
+        <TestimonialCard
+          name={"Varun Tiwari"}
+          feedback={"Very good portfolio, amazing projects"}
         />
       </section>
     </div>
