@@ -44,7 +44,7 @@ const Home = () => {
     },
   };
   return (
-    <div className="home">
+    <div id="home">
       <section>
         <div>
           <motion.h1 {...animations.h1}>
