@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Home from "./components/Home.jsx";
 import Work from "./components/Work.jsx";
+import Timeline from "./components/Timeline.jsx";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <Home />
       <Work />
+      <Timeline />
     </>
   );
 }
