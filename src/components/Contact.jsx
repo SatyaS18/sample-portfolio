@@ -1,13 +1,17 @@
 import React from "react";
 import { useState } from "react";
 import vg from "../assets/vg.png";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const submitHandler = () => {};
+  const submitHandler = (e) => {
+    e.preventDefault();
+    toast.success("Message sent");
+  };
   return (
     <div id="contact">
       <section>
