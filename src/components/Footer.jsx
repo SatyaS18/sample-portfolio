@@ -4,6 +4,7 @@ import {
   AiFillInstagram,
   AiFillTwitterCircle,
   AiFillYoutube,
+  AiOutlineArrowUp,
 } from "react-icons/ai";
 import img from "../assets/satya.jpg";
 
@@ -34,6 +35,9 @@ const Footer = () => {
           </a>
         </article>
       </aside>
+      <a href="#home">
+        <AiOutlineArrowUp />
+      </a>
     </footer>
   );
 };
