@@ -3,15 +3,33 @@ import { useState } from "react";
 import vg from "../assets/vg.png";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../firebase";
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [disableBtn, setDisableBtn] = useState(false);
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
-    toast.success("Message sent");
+    setDisableBtn(true);
+    try {
+      await addDoc(collection(db, "contacts"), {
+        name,
+        email,
+        message,
+      });
+      setName("");
+      setEmail("");
+      setMessage("");
+      toast.success("Message sent");
+      setDisableBtn(false);
+    } catch (error) {
+      toast.error("ERROR:  " + error.message);
+      setDisableBtn(false);
+    }
   };
 
   const animations = {
@@ -69,7 +87,12 @@ const Contact = () => {
             required
           />
 
-          <motion.button type="submit" {...animations.button}>
+          <motion.button
+            disabled={disableBtn}
+            type="submit"
+            className={disableBtn ? "disableBtn" : ""}
+            {...animations.button}
+          >
             Send
           </motion.button>
         </motion.form>
