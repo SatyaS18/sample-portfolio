@@ -1,4 +1,5 @@
 import React from "react";
+import vg from "../assets/vg.png";
 
 const Contact = () => {
   return (
@@ -14,6 +15,10 @@ const Contact = () => {
           <button type="submit">Send</button>
         </form>
       </section>
+
+      <aside>
+        <img src={vg} alt="graphics" />
+      </aside>
     </div>
   );
 };
