@@ -4,6 +4,7 @@ import Work from "./components/Work.jsx";
 import Timeline from "./components/Timeline.jsx";
 import Services from "./components/Services.jsx";
 import Testimonial from "./components/Testimonial.jsx";
+import Contact from "./components/Contact.jsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Timeline />
       <Services />
       <Testimonial />
+      <Contact />
     </>
   );
 }
