@@ -7,7 +7,6 @@ const Header = ({ setMenuOpen, menuOpen }) => {
       <nav>
         <NavContent setMenuOpen={setMenuOpen} />
       </nav>
-
       <button className="navBtn" onClick={() => setMenuOpen(!menuOpen)}>
         <AiOutlineMenu />
       </button>
