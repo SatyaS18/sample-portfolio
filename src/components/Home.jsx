@@ -4,13 +4,14 @@ import Typewriter from "typewriter-effect";
 import { BsArrowUpRight, BsChevronDown } from "react-icons/bs";
 import me from "../assets/satya2.png";
 import { useRef } from "react";
-const Home = () => {
+
+const Home = ({ ratio }) => {
   const clientCount = useRef(null);
   const projectCount = useRef(null);
 
   const animationClientsCount = () => {
     animate(0, 100, {
-      duration: 5,
+      duration: 3,
       onUpdate: (v) => (clientCount.current.textContent = v.toFixed()),
     });
   };
@@ -69,10 +70,12 @@ const Home = () => {
           <article>
             <p>
               +
-              <motion.span
-                whileInView={animationClientsCount}
-                ref={clientCount}
-              ></motion.span>
+              {ratio < 2 && (
+                <motion.span
+                  whileInView={animationClientsCount}
+                  ref={clientCount}
+                ></motion.span>
+              )}
             </p>
             <span>Clients Worldwide</span>
           </article>
@@ -80,10 +83,14 @@ const Home = () => {
             <article>
               <p>
                 +
-                <motion.span
-                  whileInView={animationProjectsCount}
-                  ref={projectCount}
-                ></motion.span>
+                {ratio < 2 && (
+                  <motion.span
+                    ref={projectCount}
+                    whileInView={animationProjectsCount}
+                  >
+                    500
+                  </motion.span>
+                )}
               </p>
               <span>Projects Made</span>
             </article>
